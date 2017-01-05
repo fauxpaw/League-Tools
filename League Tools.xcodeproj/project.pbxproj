@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		4C95D0C11E1A33D100AFDDBA /* PlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C95D0C01E1A33D100AFDDBA /* PlayerTableViewCell.swift */; };
+		4C95D0C31E1C502B00AFDDBA /* CheckBoxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C95D0C21E1C502B00AFDDBA /* CheckBoxButton.swift */; };
+		4C95D0C51E1C54CC00AFDDBA /* GlobalVars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C95D0C41E1C54CC00AFDDBA /* GlobalVars.swift */; };
+		4C95D0C71E1F037C00AFDDBA /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C95D0C61E1F037C00AFDDBA /* MenuTableViewController.swift */; };
 		4CEA5F531E17505600777D10 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEA5F521E17505600777D10 /* AppDelegate.swift */; };
 		4CEA5F561E17505600777D10 /* League_Tools.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4CEA5F541E17505600777D10 /* League_Tools.xcdatamodeld */; };
 		4CEA5F581E17505600777D10 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEA5F571E17505600777D10 /* MasterViewController.swift */; };
@@ -19,6 +22,9 @@
 
 /* Begin PBXFileReference section */
 		4C95D0C01E1A33D100AFDDBA /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
+		4C95D0C21E1C502B00AFDDBA /* CheckBoxButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckBoxButton.swift; sourceTree = "<group>"; };
+		4C95D0C41E1C54CC00AFDDBA /* GlobalVars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalVars.swift; sourceTree = "<group>"; };
+		4C95D0C61E1F037C00AFDDBA /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		4CEA5F4F1E17505600777D10 /* League Tools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "League Tools.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CEA5F521E17505600777D10 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CEA5F551E17505600777D10 /* League_Tools.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = League_Tools.xcdatamodel; sourceTree = "<group>"; };
@@ -73,6 +79,7 @@
 			children = (
 				4CEA5F571E17505600777D10 /* MasterViewController.swift */,
 				4CEA5F591E17505600777D10 /* DetailViewController.swift */,
+				4C95D0C61E1F037C00AFDDBA /* MenuTableViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -82,6 +89,7 @@
 			children = (
 				4CEA5F521E17505600777D10 /* AppDelegate.swift */,
 				4CEA5F631E17505600777D10 /* Info.plist */,
+				4C95D0C41E1C54CC00AFDDBA /* GlobalVars.swift */,
 			);
 			name = "App Global";
 			sourceTree = "<group>";
@@ -91,6 +99,7 @@
 			children = (
 				4CEA5F541E17505600777D10 /* League_Tools.xcdatamodeld */,
 				4C95D0C01E1A33D100AFDDBA /* PlayerTableViewCell.swift */,
+				4C95D0C21E1C502B00AFDDBA /* CheckBoxButton.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -182,6 +191,9 @@
 				4CEA5F531E17505600777D10 /* AppDelegate.swift in Sources */,
 				4C95D0C11E1A33D100AFDDBA /* PlayerTableViewCell.swift in Sources */,
 				4CEA5F581E17505600777D10 /* MasterViewController.swift in Sources */,
+				4C95D0C71E1F037C00AFDDBA /* MenuTableViewController.swift in Sources */,
+				4C95D0C51E1C54CC00AFDDBA /* GlobalVars.swift in Sources */,
+				4C95D0C31E1C502B00AFDDBA /* CheckBoxButton.swift in Sources */,
 				4CEA5F5A1E17505600777D10 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

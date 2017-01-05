@@ -10,17 +10,17 @@ import UIKit
 import CoreData
 import ContactsUI
 
-class MasterViewController: UITableViewController, NSFetchedResultsControllerDelegate, CNContactPickerDelegate {
+class MasterViewController: UITableViewController, NSFetchedResultsControllerDelegate, CNContactPickerDelegate, UIPopoverPresentationControllerDelegate {
 
     var detailViewController: DetailViewController? = nil
     var managedObjectContext: NSManagedObjectContext? = nil
 
-    //MARK: - VIEWCONTROLLER LIFECYCLE
+    //MARK: - CONTROLLER LIFECYCLE
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.navigationItem.leftBarButtonItem = self.editButtonItem
+        //self.navigationItem.leftBarButtonItem = self.editButtonItem
 
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(givePicker(_:)))
         self.navigationItem.rightBarButtonItem = addButton
@@ -57,7 +57,6 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         }
         // If appropriate, configure the new managed object.
         
-
         // Save the context.
         do {
             try context.save()
@@ -69,7 +68,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         }
     }
 
-    // MARK: - Segues
+    // MARK: - SEGUES
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
@@ -81,9 +80,17 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
                 controller.navigationItem.leftItemsSupplementBackButton = true
             }
         }
+        
+        if segue.identifier == "menuViewController" {
+            let controller = segue.destination as! MenuTableViewController
+            let vc = controller.popoverPresentationController
+            if vc != nil {
+                vc?.delegate = self
+            }
+        }
     }
 
-    // MARK: - Table View
+    // MARK: - TABLE VIEW
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return self.fetchedResultsController.sections?.count ?? 0
@@ -125,12 +132,12 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     func configureCell(_ cell: PlayerTableViewCell, withPlayer player: Player) {
         guard let first = player.firstName else {return}
         guard let last = player.lastName else {return}
-        cell.textLabel!.text = "\(first) \(last)"
+        cell.playerLabel!.text = "\(first) \(last)"
         cell.paidLabel.text = "Unpaid"
         
     }
 
-    // MARK: - Fetched results controller
+    // MARK: - FETCHED RESULTS CONTROLLER
 
     var fetchedResultsController: NSFetchedResultsController<Player> {
         if _fetchedResultsController != nil {
@@ -206,10 +213,22 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     
     func contactPicker(_ picker: CNContactPickerViewController, didSelect contacts: [CNContact]) {
         picker.dismiss(animated: true, completion: nil)
-        print(contacts)
         self.insertNewObject(contacts: contacts)
     }
     
+    //MARK: - POPOVER PRESENTATION CONTROLLER DELEGATE
+    
+    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+         return .none
+    }
+    
+    //MARK: - ACTIONS
+    
+    @IBAction func menuButtonPressed(_ sender: Any) {
+        
+        self.performSegue(withIdentifier: "menuViewController", sender: self)
+        
+    }
     
     /*
      // Implementing the above methods to update the table view in response to individual changes may have performance implications if a large number of changes are made simultaneously. If this proves to be an issue, you can instead just implement controllerDidChangeContent: which notifies the delegate that all section and object changes have been processed.

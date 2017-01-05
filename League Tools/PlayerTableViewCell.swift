@@ -11,7 +11,9 @@ import UIKit
 class PlayerTableViewCell: UITableViewCell {
     
     @IBOutlet weak var paidLabel: UILabel!
-
+    @IBOutlet weak var playerLabel: UILabel!
+    @IBOutlet weak var checkBoxButton: CheckBoxButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -21,6 +23,9 @@ class PlayerTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    @IBAction func checkBoxSelected(_ sender: Any) {
+        self.checkBoxButton.boxTapped()
     }
 
 }

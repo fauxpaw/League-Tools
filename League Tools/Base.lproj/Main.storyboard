@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -85,32 +86,53 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="Arm-wq-HPj" style="IBUITableViewCellStyleDefault" id="WCw-Qf-5nD" customClass="PlayerTableViewCell" customModule="League_Tools" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="22" width="375" height="44"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="80" id="WCw-Qf-5nD" customClass="PlayerTableViewCell" customModule="League_Tools" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="22" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WCw-Qf-5nD" id="37f-cq-3Eg">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Arm-wq-HPj">
-                                            <rect key="frame" x="15" y="0.0" width="345" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DqE-GN-bAF">
+                                            <rect key="frame" x="81" y="27.5" width="60" height="24"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                            <nil key="textColor"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QD5-Zd-q2f" userLabel="Dues">
-                                            <rect key="frame" x="300" y="0.0" width="42" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dues" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QD5-Zd-q2f" userLabel="Dues">
+                                            <rect key="frame" x="315.5" y="29.5" width="39.5" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AKl-zs-8jT" customClass="CheckBoxButton" customModule="League_Tools" customModuleProvider="target">
+                                            <rect key="frame" x="11" y="10" width="60" height="60"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="AKl-zs-8jT" secondAttribute="height" multiplier="1:1" id="cfL-0x-daT"/>
+                                            </constraints>
+                                            <connections>
+                                                <action selector="checkBoxSelected:" destination="WCw-Qf-5nD" eventType="touchUpInside" id="hTF-UN-OSt"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="QD5-Zd-q2f" firstAttribute="centerY" secondItem="37f-cq-3Eg" secondAttribute="centerY" id="5co-Qf-TOh"/>
+                                        <constraint firstItem="DqE-GN-bAF" firstAttribute="centerY" secondItem="37f-cq-3Eg" secondAttribute="centerY" id="7Se-yn-37z"/>
+                                        <constraint firstItem="DqE-GN-bAF" firstAttribute="leading" secondItem="AKl-zs-8jT" secondAttribute="trailing" constant="10" id="gdq-ix-BRP"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="AKl-zs-8jT" firstAttribute="centerY" secondItem="WCw-Qf-5nD" secondAttribute="centerY" id="7eJ-rz-ARQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="AKl-zs-8jT" secondAttribute="bottom" constant="10" id="XKX-7p-u5w"/>
+                                    <constraint firstItem="AKl-zs-8jT" firstAttribute="leading" secondItem="WCw-Qf-5nD" secondAttribute="leading" constant="11" id="kI4-Ff-zXu"/>
+                                    <constraint firstAttribute="trailing" secondItem="QD5-Zd-q2f" secondAttribute="trailing" constant="20" id="qO0-s9-oNv"/>
+                                    <constraint firstItem="AKl-zs-8jT" firstAttribute="top" secondItem="WCw-Qf-5nD" secondAttribute="top" constant="10" id="uS2-ya-13S"/>
+                                </constraints>
                                 <connections>
+                                    <outlet property="checkBoxButton" destination="AKl-zs-8jT" id="POS-OD-gam"/>
                                     <outlet property="paidLabel" destination="QD5-Zd-q2f" id="yVW-he-949"/>
+                                    <outlet property="playerLabel" destination="DqE-GN-bAF" id="kg2-DW-a18"/>
                                     <segue destination="vC3-pB-5Vb" kind="showDetail" identifier="showDetail" id="6S0-TO-JiA"/>
                                 </connections>
                             </tableViewCell>
@@ -121,7 +143,18 @@
                             <outlet property="delegate" destination="7bK-jq-Zjz" id="RA6-mI-bju"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Players" id="Zdf-7t-Un8"/>
+                    <navigationItem key="navigationItem" title="Players" id="Zdf-7t-Un8">
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="0kW-pf-xyK">
+                            <connections>
+                                <action selector="menuButtonPressed:" destination="7bK-jq-Zjz" id="bX1-2A-iPC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="DPC-61-uA3" kind="popoverPresentation" identifier="menuViewController" popoverAnchorBarButtonItem="0kW-pf-xyK" id="Q6f-09-vd2">
+                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                        </segue>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
             </objects>
@@ -142,6 +175,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SLD-UC-DBI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-45" y="129"/>
+        </scene>
+        <!--Menu Table View Controller-->
+        <scene sceneID="uHK-b5-8Fr">
+            <objects>
+                <tableViewController id="DPC-61-uA3" customClass="MenuTableViewController" customModule="League_Tools" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="RP6-NJ-UnJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="AQI-mA-Nd8">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AQI-mA-Nd8" id="lcM-Me-Sbs">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="DPC-61-uA3" id="YmF-8y-fal"/>
+                            <outlet property="delegate" destination="DPC-61-uA3" id="KHW-I5-TYm"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pps-Yl-PGI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1457" y="-630"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
